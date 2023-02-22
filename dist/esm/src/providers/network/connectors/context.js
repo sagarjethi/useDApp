@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { providers } from 'ethers';
 import { getAddress } from 'ethers/lib/utils';
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
@@ -174,7 +173,7 @@ export function ConnectorContextProvider({ children }) {
         }
         setError(errors === null || errors === void 0 ? void 0 : errors[errors.length - 1]);
     }, [chainId, errors, networkStates]);
-    return (_jsx(ConnectorContext.Provider, Object.assign({ value: {
+    return (<ConnectorContext.Provider value={{
             connector: controller,
             deactivate,
             reportError,
@@ -188,7 +187,9 @@ export function ConnectorContextProvider({ children }) {
             active: !!provider,
             switchNetwork,
             setError: setErrorDeprecated,
-        } }, { children: children })));
+        }}>
+      {children}
+    </ConnectorContext.Provider>);
 }
 export const useConnector = () => useContext(ConnectorContext);
 //# sourceMappingURL=context.js.map

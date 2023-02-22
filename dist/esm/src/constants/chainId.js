@@ -93,6 +93,7 @@ export var ChainId;
     ChainId[ChainId["AvalancheTestnet"] = 43113] = "AvalancheTestnet";
     ChainId[ChainId["Songbird"] = 19] = "Songbird";
     ChainId[ChainId["Flare"] = 14] = "Flare";
+    ChainId[ChainId["MantleTestnet"] = 5001] = "MantleTestnet";
     ChainId[ChainId["FlareCostonTestnet"] = 16] = "FlareCostonTestnet";
     ChainId[ChainId["FlareCoston2Testnet"] = 114] = "FlareCoston2Testnet";
     ChainId[ChainId["MoonbaseAlpha"] = 1287] = "MoonbaseAlpha";

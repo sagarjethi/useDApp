@@ -2,7 +2,7 @@ import { ChainId } from '../constants';
 /**
  * @internal Intended for internal use - use it on your own risk
  */
-export declare const getChainById: (chainId: ChainId) => import("../constants").Chain | undefined;
+export declare const getChainById: (chainId: ChainId) => import("../constants").Chain;
 /**
  * @public
  * @deprecated

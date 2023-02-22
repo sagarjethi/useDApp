@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { useMemo } from 'react';
 import { ConfigProvider } from './config';
 import { MultiChainStateProvider } from './chainState';
@@ -15,7 +14,9 @@ import { ConnectorContextProvider } from './network/connectors/context';
  * @public
  */
 export function DAppProvider({ config, children }) {
-    return (_jsx(ConfigProvider, Object.assign({ config: config }, { children: _jsx(DAppProviderWithConfig, { children: children }) })));
+    return (<ConfigProvider config={config}>
+      <DAppProviderWithConfig>{children}</DAppProviderWithConfig>
+    </ConfigProvider>);
 }
 const getMulticallAddresses = (networks) => {
     const result = {};
@@ -38,6 +39,20 @@ function DAppProviderWithConfig({ children }) {
         defaultAddresses,
         multicallAddresses,
     ]);
-    return (_jsx(WindowProvider, { children: _jsx(ReadonlyNetworksProvider, { children: _jsx(ConnectorContextProvider, { children: _jsx(BlockNumbersProvider, { children: _jsx(LocalMulticallProvider, { children: _jsx(MultiChainStateProvider, Object.assign({ multicallAddresses: multicallAddressesMerged }, { children: _jsx(NotificationsProvider, { children: _jsx(TransactionProvider, { children: children }) }) })) }) }) }) }) }));
+    return (<WindowProvider>
+      <ReadonlyNetworksProvider>
+        <ConnectorContextProvider>
+          <BlockNumbersProvider>
+            <LocalMulticallProvider>
+              <MultiChainStateProvider multicallAddresses={multicallAddressesMerged}>
+                <NotificationsProvider>
+                  <TransactionProvider>{children}</TransactionProvider>
+                </NotificationsProvider>
+              </MultiChainStateProvider>
+            </LocalMulticallProvider>
+          </BlockNumbersProvider>
+        </ConnectorContextProvider>
+      </ReadonlyNetworksProvider>
+    </WindowProvider>);
 }
 //# sourceMappingURL=DAppProvider.js.map

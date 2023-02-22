@@ -6,6 +6,18 @@ import { validateArguments } from '../../../helpers/validateArgument';
 import { DEFAULT_CONFIG } from '../../../model/config/default';
 import { MetamaskConnector } from './implementations';
 export class ConnectorController {
+    emitUpdate() {
+        this.updated.emit({
+            active: this.active,
+            chainId: this.chainId,
+            accounts: this.accounts,
+            blockNumber: this.blockNumber,
+            errors: this.errors,
+        });
+    }
+    updateConfig(config) {
+        this._config = Object.assign(Object.assign({}, this._config), config);
+    }
     constructor(connector, config = DEFAULT_CONFIG) {
         this.connector = connector;
         this.updated = new Event();
@@ -19,18 +31,6 @@ export class ConnectorController {
             this.accounts = accounts;
             this.emitUpdate();
         });
-    }
-    emitUpdate() {
-        this.updated.emit({
-            active: this.active,
-            chainId: this.chainId,
-            accounts: this.accounts,
-            blockNumber: this.blockNumber,
-            errors: this.errors,
-        });
-    }
-    updateConfig(config) {
-        this._config = Object.assign(Object.assign({}, this._config), config);
     }
     getProvider() {
         return this.connector.provider;

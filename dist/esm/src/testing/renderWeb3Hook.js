@@ -1,7 +1,7 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { MockProvider } from 'ethereum-waffle';
 import { renderHook } from '@testing-library/react-hooks';
 import { MultiChainStateProvider, ConfigProvider } from '../providers';
+import React from 'react';
 import { deployMulticall, deployMulticall2, getWaitUtils, IdentityWrapper, mineBlock } from './utils';
 import { BlockNumbersProvider } from '../providers/blockNumber/blockNumbers';
 import { ConnectorContextProvider, ReadonlyNetworksProvider } from '../providers/network';
@@ -52,11 +52,21 @@ export const renderWeb3Hook = async (hook, options) => {
     const { result, waitForNextUpdate, rerender, unmount } = renderHook(hook, {
         wrapper: (wrapperProps) => {
             var _a, _b;
-            return (_jsx(ConfigProvider, Object.assign({ config: {
+            return (<ConfigProvider config={{
                     readOnlyUrls: readOnlyProviders,
                     pollingInterval: (_b = (_a = options === null || options === void 0 ? void 0 : options.mockProviderOptions) === null || _a === void 0 ? void 0 : _a.pollingInterval) !== null && _b !== void 0 ? _b : 200,
                     multicallVersion: options === null || options === void 0 ? void 0 : options.multicallVersion,
-                } }, { children: _jsx(ConnectorContextProvider, { children: _jsx(ReadonlyNetworksProvider, Object.assign({ providerOverrides: readOnlyProviders }, { children: _jsx(BlockNumbersProvider, { children: _jsx(MultiChainStateProvider, Object.assign({ multicallAddresses: multicallAddresses }, { children: _jsx(UserWrapper, Object.assign({}, wrapperProps)) })) }) })) }) })));
+                }}>
+        <ConnectorContextProvider>
+          <ReadonlyNetworksProvider providerOverrides={readOnlyProviders}>
+            <BlockNumbersProvider>
+              <MultiChainStateProvider multicallAddresses={multicallAddresses}>
+                <UserWrapper {...wrapperProps}/>
+              </MultiChainStateProvider>
+            </BlockNumbersProvider>
+          </ReadonlyNetworksProvider>
+        </ConnectorContextProvider>
+      </ConfigProvider>);
         },
         initialProps: (_d = options === null || options === void 0 ? void 0 : options.renderHook) === null || _d === void 0 ? void 0 : _d.initialProps,
     });

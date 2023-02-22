@@ -34,7 +34,7 @@ export declare function encodeFilterData(filter: TypedFilter | Falsy, fromBlock?
  *
  * @public
  */
-export declare type LogsResult<T extends TypedContract, EN extends ContractEventNames<T>> = {
+export type LogsResult<T extends TypedContract, EN extends ContractEventNames<T>> = {
     value: Awaited<DetailedEventRecord<T, EN>>[];
     error: undefined;
 } | {

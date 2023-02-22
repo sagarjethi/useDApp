@@ -9,30 +9,30 @@ export declare function useConfig(): FullConfig | Record<string, never>;
  * @public
  */
 export declare function useUpdateConfig(): (config: {
-    readOnlyChainId?: number | undefined;
-    readOnlyUrls?: import("../constants").NodeUrls | undefined;
-    multicallAddresses?: import("../constants").MulticallAddresses | undefined;
-    multicallVersion?: 1 | 2 | undefined;
-    fastMulticallEncoding?: boolean | undefined;
-    noMetamaskDeactivate?: boolean | undefined;
-    supportedChains?: number[] | undefined;
-    networks?: Chain[] | undefined;
-    pollingInterval?: number | undefined;
-    pollingIntervals?: import("../constants").PollingIntervals | undefined;
+    readOnlyChainId?: number;
+    readOnlyUrls?: import("../constants").NodeUrls;
+    multicallAddresses?: import("../constants").MulticallAddresses;
+    multicallVersion?: 1 | 2;
+    fastMulticallEncoding?: boolean;
+    noMetamaskDeactivate?: boolean;
+    supportedChains?: number[];
+    networks?: Chain[];
+    pollingInterval?: number;
+    pollingIntervals?: import("../constants").PollingIntervals;
     notifications?: {
-        checkInterval?: number | undefined;
-        expirationPeriod?: number | undefined;
-    } | undefined;
+        checkInterval?: number;
+        expirationPeriod?: number;
+    };
     localStorage?: {
         transactionPath: string;
-    } | undefined;
-    gasLimitBufferPercentage?: number | undefined;
-    bufferGasLimitPercentage?: number | undefined;
-    autoConnect?: boolean | undefined;
-    refresh?: number | "never" | "everyBlock" | undefined;
-    localStorageOverride?: Storage | undefined;
+    };
+    gasLimitBufferPercentage?: number;
+    bufferGasLimitPercentage?: number;
+    autoConnect?: boolean;
+    refresh?: number | "never" | "everyBlock";
+    localStorageOverride?: Storage;
     connectors?: {
         [key: string]: import("../providers").Connector;
-    } | undefined;
+    };
 }) => void;
 //# sourceMappingURL=useConfig.d.ts.map

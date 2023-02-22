@@ -2,18 +2,18 @@ import { providers } from 'ethers';
 import { ReactNode } from 'react';
 import { Connector } from './connector';
 import { ConnectorController } from './connectorController';
-declare type JsonRpcProvider = providers.JsonRpcProvider;
-declare type ExternalProvider = providers.ExternalProvider;
-declare type FallBackProvider = providers.FallbackProvider;
-export declare type ActivateBrowserWallet = (arg?: {
+type JsonRpcProvider = providers.JsonRpcProvider;
+type ExternalProvider = providers.ExternalProvider;
+type FallBackProvider = providers.FallbackProvider;
+export type ActivateBrowserWallet = (arg?: {
     type: string;
 }) => void;
-declare type MaybePromise<T> = Promise<T> | T;
-declare type SupportedProviders = JsonRpcProvider | ExternalProvider | {
+type MaybePromise<T> = Promise<T> | T;
+type SupportedProviders = JsonRpcProvider | ExternalProvider | {
     getProvider: () => MaybePromise<JsonRpcProvider | ExternalProvider>;
     activate: () => Promise<any>;
 } | Connector;
-export declare type Web3Ethers = {
+export type Web3Ethers = {
     activate: (provider: SupportedProviders) => Promise<void>;
     /**
      * @deprecated

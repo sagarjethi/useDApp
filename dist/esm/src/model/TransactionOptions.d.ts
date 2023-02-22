@@ -47,5 +47,5 @@ export interface TransactionOptionsWithEncryptedJson {
  *
  * @public
  */
-export declare type TransactionOptions = TransactionOptionsBase | (TransactionOptionsBase & (TransactionOptionsWithSigner | TransactionOptionsWithPrivateKey | TransactionOptionsWithMnemonicPhrase | TransactionOptionsWithEncryptedJson));
+export type TransactionOptions = TransactionOptionsBase | (TransactionOptionsBase & (TransactionOptionsWithSigner | TransactionOptionsWithPrivateKey | TransactionOptionsWithMnemonicPhrase | TransactionOptionsWithEncryptedJson));
 //# sourceMappingURL=TransactionOptions.d.ts.map

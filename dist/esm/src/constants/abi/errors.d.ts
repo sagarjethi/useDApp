@@ -12,9 +12,9 @@ export declare const errorsContractABI: {
         outputs?: undefined;
         stateMutability?: undefined;
     } | {
-        inputs: never[];
+        inputs: any[];
         name: string;
-        outputs: never[];
+        outputs: any[];
         stateMutability: string;
         type: string;
     })[];

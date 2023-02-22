@@ -1,14 +1,14 @@
 import { Chain } from '../../constants';
 import { Connector } from '../../providers/network/connectors/connector';
 import { providers } from 'ethers';
-export declare type BaseProviderFactory = () => providers.BaseProvider;
-export declare type NodeUrls = {
+export type BaseProviderFactory = () => providers.BaseProvider;
+export type NodeUrls = {
     [chainId: number]: string | providers.BaseProvider | BaseProviderFactory;
 };
-export declare type MulticallAddresses = {
+export type MulticallAddresses = {
     [chainId: number]: string;
 };
-export declare type PollingIntervals = {
+export type PollingIntervals = {
     [chaindId: number]: number;
 };
 /**
@@ -131,13 +131,13 @@ export interface FullConfig {
         [key: string]: Connector;
     };
 }
-declare type RecursivePartial<Object, Keys extends {}> = {
+type RecursivePartial<Object, Keys extends {}> = {
     [P in keyof Object]?: P extends keyof Keys ? RecursivePartial<Object[P], Keys[P]> : Object[P];
 };
 /**
  * useDapp configuration.
  */
-export declare type Config = RecursivePartial<FullConfig, {
+export type Config = RecursivePartial<FullConfig, {
     notifications: {};
 }>;
 export {};

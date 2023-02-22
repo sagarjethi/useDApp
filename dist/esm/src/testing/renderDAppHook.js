@@ -1,5 +1,5 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { renderHook } from '@testing-library/react-hooks';
+import React from 'react';
 import { DAppProvider } from '../providers';
 import { getWaitUtils, IdentityWrapper } from './utils';
 /**
@@ -23,7 +23,9 @@ export const renderDAppHook = async (hook, options) => {
     const { result, waitForNextUpdate, rerender, unmount } = renderHook(hook, {
         wrapper: (wrapperProps) => {
             var _a;
-            return (_jsx(DAppProvider, Object.assign({ config: (_a = options === null || options === void 0 ? void 0 : options.config) !== null && _a !== void 0 ? _a : {} }, { children: _jsx(UserWrapper, Object.assign({}, wrapperProps)) })));
+            return (<DAppProvider config={(_a = options === null || options === void 0 ? void 0 : options.config) !== null && _a !== void 0 ? _a : {}}>
+        <UserWrapper {...wrapperProps}/>
+      </DAppProvider>);
         },
         initialProps: (_c = options === null || options === void 0 ? void 0 : options.renderHook) === null || _c === void 0 ? void 0 : _c.initialProps,
     });

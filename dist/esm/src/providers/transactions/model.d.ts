@@ -7,14 +7,14 @@ export interface StoredTransaction {
     transactionName?: string;
     originalTransaction?: TransactionResponse;
 }
-export declare type UpdatedTransaction = Omit<StoredTransaction, 'submittedAt'> & {
+export type UpdatedTransaction = Omit<StoredTransaction, 'submittedAt'> & {
     receipt: TransactionReceipt;
 };
 /**
  * @public
  */
 export declare function getStoredTransactionState(transaction: StoredTransaction): "Mining" | "Success" | "Fail";
-export declare type StoredTransactions = {
+export type StoredTransactions = {
     [chainId: number]: StoredTransaction[];
 };
 /**

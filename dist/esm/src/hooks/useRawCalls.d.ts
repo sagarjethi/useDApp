@@ -29,5 +29,8 @@ export declare function useRawCalls(calls: (RawCall | Falsy)[]): RawCallResult[]
  *   `success` - boolean indicating whether call was successful or not,
  *   `value` - encoded result when success is `true` or encoded error message when success is `false`.
  */
-export declare function useRawCall(call: RawCall | Falsy): RawCallResult;
+export declare function useRawCall(call: RawCall | Falsy): {
+    value: string;
+    success: boolean;
+};
 //# sourceMappingURL=useRawCalls.d.ts.map

@@ -42,7 +42,7 @@ export declare function getCallsForUpdate(requests: RawCall[], options?: Refresh
  *
  * @public
  */
-export declare type CallResult<T extends TypedContract, MN extends ContractMethodNames<T>> = {
+export type CallResult<T extends TypedContract, MN extends ContractMethodNames<T>> = {
     value: Awaited<ReturnType<T['functions'][MN]> | undefined>;
     error: Error | undefined;
 } | undefined;

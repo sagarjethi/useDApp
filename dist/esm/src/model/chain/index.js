@@ -11,6 +11,7 @@ export * from './fantom';
 export * from './filecoin';
 export * from './harmony';
 export * from './ethereum';
+export * from './mantle';
 export * from './metis';
 export * from './moonbeam';
 export * from './moonriver';

@@ -42,7 +42,7 @@ interface GenericError {
     type: 'GENERIC_ERROR';
     error: Error;
 }
-declare type Notification = Init | NetworkChanged | BlockNumberChanged | AccountChanged | CallsChanged | MulticallSuccess | MulticallError | GenericError;
+type Notification = Init | NetworkChanged | BlockNumberChanged | AccountChanged | CallsChanged | MulticallSuccess | MulticallError | GenericError;
 export declare function notifyDevtools(notification: Notification): void;
 export {};
 //# sourceMappingURL=devtools.d.ts.map

@@ -8,7 +8,7 @@ export declare const reverterContractABI: {
             type: string;
         }[];
         name: string;
-        outputs: never[];
+        outputs: any[];
         stateMutability: string;
         type: string;
     }[];

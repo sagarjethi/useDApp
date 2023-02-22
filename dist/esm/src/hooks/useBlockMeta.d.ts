@@ -5,8 +5,8 @@ import { QueryParams } from '../constants/type/QueryParams';
  * @public
  */
 export declare function useBlockMeta(queryParams?: QueryParams): {
-    timestamp: Date | undefined;
-    difficulty: BigNumber | undefined;
-    blockNumber: number | undefined;
+    timestamp: Date;
+    difficulty: BigNumber;
+    blockNumber: number;
 };
 //# sourceMappingURL=useBlockMeta.d.ts.map

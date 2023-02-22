@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-export declare type ChildrenProps = {
+export type ChildrenProps = {
     children?: ReactNode;
 };
 export declare const IdentityWrapper: ({ children }: ChildrenProps) => JSX.Element;

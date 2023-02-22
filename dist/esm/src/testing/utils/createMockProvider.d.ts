@@ -13,7 +13,7 @@ export interface CreateMockProviderResult {
     chainId: ChainId;
     mineBlock: () => Promise<void>;
 }
-export declare type TestingNetwork = CreateMockProviderResult;
+export type TestingNetwork = CreateMockProviderResult;
 /**
  * Creates a MockProvider, with an option to override `chainId`.
  * Automatically deploys multicall.

@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useEffect, useReducer } from 'react';
 import { useEthers, useLocalStorage, useConfig } from '../../hooks';
 import { useIsMounted } from '../../hooks/useIsMounted';
@@ -115,7 +114,7 @@ export function TransactionProvider({ children }) {
         };
         void updateTransactions();
     }, [chainId, library]);
-    return (_jsx(TransactionsContext.Provider, { value: { transactions, addTransaction, updateTransaction }, children: children }));
+    return (<TransactionsContext.Provider value={{ transactions, addTransaction, updateTransaction }} children={children}/>);
 }
 function shouldCheck(blockNumber, tx) {
     if (tx.receipt) {

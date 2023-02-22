@@ -8,6 +8,6 @@ export declare const DEFAULT_OPTIONS: {
     prefix: string;
     suffix: string;
 };
-export declare type CurrencyFormatOptions = typeof DEFAULT_OPTIONS;
+export type CurrencyFormatOptions = typeof DEFAULT_OPTIONS;
 export declare function formatCurrency(options: CurrencyFormatOptions, value: string): string;
 //# sourceMappingURL=formatting.d.ts.map

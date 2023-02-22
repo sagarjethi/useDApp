@@ -1,4 +1,3 @@
-import { jsx as _jsx, Fragment as _Fragment } from "react/jsx-runtime";
 import { useEffect, useState } from 'react';
 import { utils } from 'ethers';
 import { getChainById } from '../helpers';
@@ -69,13 +68,13 @@ export function LocalMulticallProvider({ children }) {
     const awaitingMulticallBlock = multicallBlockNumber && blockNumber && blockNumber < multicallBlockNumber;
     if (localMulticallState === LocalMulticallState.Deploying ||
         (localMulticallState === LocalMulticallState.Deployed && awaitingMulticallBlock)) {
-        return _jsx("div", { children: "Deploying multicall..." });
+        return <div>Deploying multicall...</div>;
     }
     else if (localMulticallState === LocalMulticallState.Error) {
-        return _jsx("div", { children: "Error deploying multicall contract" });
+        return <div>Error deploying multicall contract</div>;
     }
     else {
-        return _jsx(_Fragment, { children: children });
+        return <>{children}</>;
     }
 }
 //# sourceMappingURL=LocalMulticallProvider.js.map

@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { useState, useEffect } from 'react';
 import { WindowContext } from './context';
 /**
@@ -20,6 +19,6 @@ export function WindowProvider({ children }) {
         document.addEventListener('visibilitychange', visibilityChangeListener);
         return () => document.removeEventListener('visibilitychange', visibilityChangeListener);
     }, []);
-    return _jsx(WindowContext.Provider, { value: isActiveWindow, children: children });
+    return <WindowContext.Provider value={isActiveWindow} children={children}/>;
 }
 //# sourceMappingURL=provider.js.map

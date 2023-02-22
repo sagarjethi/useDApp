@@ -2,7 +2,7 @@ import { ChainId } from '../../..';
 /**
  * @internal Intended for internal use - use it on your own risk
  */
-export declare type Action = AddCall | RemoveCall | UpdateCall;
+export type Action = AddCall | RemoveCall | UpdateCall;
 /**
  * Represents a single call on the blockchain that can be included in multicall.
  *
@@ -61,6 +61,6 @@ interface RemoveCall {
 /**
  * @internal Intended for internal use - use it on your own risk
  */
-export declare function callsReducer(state: RawCall[] | undefined, action: Action): RawCall[];
+export declare function callsReducer(state: RawCall[], action: Action): RawCall[];
 export {};
 //# sourceMappingURL=callsReducer.d.ts.map

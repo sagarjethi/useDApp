@@ -8,8 +8,8 @@
  * @public
  */
 export declare const useResolveName: (name: string | undefined) => {
-    address: string | null | undefined;
+    address: string;
     isLoading: boolean;
-    error: Error | null;
+    error: Error;
 };
 //# sourceMappingURL=useResolveName.d.ts.map

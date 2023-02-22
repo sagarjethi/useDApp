@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useEffect, useMemo, useReducer, useState } from 'react';
 import { providers } from 'ethers';
 import { useConfig } from '../../../hooks';
@@ -53,6 +52,6 @@ export function ReadonlyNetworksProvider({ providerOverrides = {}, children }) {
         updateNetworkState: dispatchNetworkState,
         networkStates,
     }), [providers, dispatchNetworkState, networkStates]);
-    return _jsx(ReadonlyNetworksContext.Provider, Object.assign({ value: networks }, { children: children }));
+    return <ReadonlyNetworksContext.Provider value={networks}>{children}</ReadonlyNetworksContext.Provider>;
 }
 //# sourceMappingURL=provider.js.map

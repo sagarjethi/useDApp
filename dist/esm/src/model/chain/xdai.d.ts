@@ -6,14 +6,14 @@ export declare const Gnosis: {
     isTestChain: boolean;
     isLocalChain: boolean;
     multicallAddress: string;
-    multicall2Address?: string | undefined;
-    rpcUrl?: string | undefined;
-    blockExplorerUrl?: string | undefined;
+    multicall2Address?: string;
+    rpcUrl?: string;
+    blockExplorerUrl?: string;
     nativeCurrency?: {
         name: string;
         symbol: string;
         decimals: number;
-    } | undefined;
+    };
     getExplorerAddressLink: (address: string) => string;
     getExplorerTransactionLink: (address: string) => string;
 };
@@ -25,14 +25,14 @@ declare const _default: {
         isTestChain: boolean;
         isLocalChain: boolean;
         multicallAddress: string;
-        multicall2Address?: string | undefined;
-        rpcUrl?: string | undefined;
-        blockExplorerUrl?: string | undefined;
+        multicall2Address?: string;
+        rpcUrl?: string;
+        blockExplorerUrl?: string;
         nativeCurrency?: {
             name: string;
             symbol: string;
             decimals: number;
-        } | undefined;
+        };
         getExplorerAddressLink: (address: string) => string;
         getExplorerTransactionLink: (address: string) => string;
     };

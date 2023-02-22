@@ -8,7 +8,7 @@ import { Falsy } from '../model/types';
  * @param calls list of calls, also see {@link RawCall}. Calls need to be in the same order across component renders.
  * @returns encoded result or Falsy value if call didn't return yet or an error occurred.
  */
-export declare function useChainCalls(calls: (RawCall | Falsy)[]): (string | undefined)[];
+export declare function useChainCalls(calls: (RawCall | Falsy)[]): string[];
 /**
  * Makes a call to a specific contract and returns its value. The hook will cause the component to refresh whenever a new block is mined and the value is changed.
  * Calls will be combined into a single multicall across all uses of {@link useChainCall}, {@link useChainCalls}, {@link useRawCall} and {@link useRawCalls}.
@@ -17,5 +17,5 @@ export declare function useChainCalls(calls: (RawCall | Falsy)[]): (string | und
  * @param call a single call, also see {@link RawCall}. A call can be `Falsy`, as it is important to keep the same ordering of hooks even if in a given render cycle there might be not enough information to perform a call.
  * @returns encoded result or Falsy value if call didn't return yet or an error occurred.
  */
-export declare function useChainCall(call: RawCall | Falsy): string | undefined;
+export declare function useChainCall(call: RawCall | Falsy): string;
 //# sourceMappingURL=useChainCalls.d.ts.map

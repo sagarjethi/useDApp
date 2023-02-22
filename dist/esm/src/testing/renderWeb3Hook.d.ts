@@ -27,13 +27,13 @@ export interface renderWeb3HookOptions<Tprops> {
  * @param options Optional options, same as in `renderHook`
  * @returns Same as in `renderHook`, with additions of helper functions.
  */
-export declare const renderWeb3Hook: <Tprops, TResult>(hook: (props: Tprops) => TResult, options?: renderWeb3HookOptions<Tprops> | undefined) => Promise<{
-    waitForCurrent: (predicate: (value: TResult) => boolean, step?: number | undefined, timeout?: number | undefined) => Promise<void>;
-    waitForCurrentEqual: (value: TResult, step?: number | undefined, timeout?: number | undefined) => Promise<void>;
+export declare const renderWeb3Hook: <Tprops, TResult>(hook: (props: Tprops) => TResult, options?: renderWeb3HookOptions<Tprops>) => Promise<{
+    waitForCurrent: (predicate: (value: TResult) => boolean, step?: number, timeout?: number) => Promise<void>;
+    waitForCurrentEqual: (value: TResult, step?: number, timeout?: number) => Promise<void>;
     result: import("@testing-library/react-hooks").RenderResult<TResult>;
     defaultProvider: MockProvider;
     mineBlock: () => Promise<void>;
-    rerender: (props?: Tprops | undefined) => void;
+    rerender: (props?: Tprops) => void;
     unmount: () => void;
     waitForNextUpdate: import("@testing-library/react-hooks").WaitForNextUpdate;
 }>;

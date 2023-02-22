@@ -1,5 +1,5 @@
 import type { TransactionReceipt, TransactionRequest, TransactionResponse } from '@ethersproject/abstract-provider';
-declare type NotificationPayload = {
+type NotificationPayload = {
     submittedAt: number;
 } & ({
     type: 'transactionPendingSignature';
@@ -25,18 +25,18 @@ declare type NotificationPayload = {
     type: 'walletConnected';
     address: string;
 });
-export declare type Notification = {
+export type Notification = {
     id: string;
 } & NotificationPayload;
-export declare type AddNotificationPayload = {
+export type AddNotificationPayload = {
     chainId: number;
     notification: NotificationPayload;
 };
-export declare type RemoveNotificationPayload = {
+export type RemoveNotificationPayload = {
     chainId: number;
     notificationId: string;
 };
-export declare type Notifications = {
+export type Notifications = {
     [chainId: number]: Notification[];
 };
 /**

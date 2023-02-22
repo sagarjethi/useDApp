@@ -8,11 +8,11 @@
  *
  * @public
  */
-export declare type RawCallResult = {
+export type RawCallResult = {
     value: string;
     success: boolean;
 } | undefined;
-export declare type ChainState = {
+export type ChainState = {
     [address: string]: {
         [data: string]: RawCallResult;
     } | undefined;

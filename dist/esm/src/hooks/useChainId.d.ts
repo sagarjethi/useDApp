@@ -6,5 +6,5 @@ export interface UseChainIdOptions {
  * Internal hook for reading current chainId for calls.
  * @internal Intended for internal use - use it on your own risk
  */
-export declare function useChainId(opts?: UseChainIdOptions): number | undefined;
+export declare function useChainId(opts?: UseChainIdOptions): number;
 //# sourceMappingURL=useChainId.d.ts.map

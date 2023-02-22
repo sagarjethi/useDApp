@@ -13,7 +13,7 @@ export interface SingleChainState {
 /**
  * @internal Intended for internal use - use it on your own risk
  */
-export declare type MultiChainState = {
+export type MultiChainState = {
     [chainId in number]?: SingleChainState;
 };
 /**

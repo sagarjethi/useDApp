@@ -11,6 +11,6 @@ export interface BlockNumberChanged {
 /**
  * @internal Intended for internal use - use it on your own risk
  */
-export declare function blockNumberReducer(state: BlockNumberState | undefined, action: BlockNumberChanged): BlockNumberState;
+export declare function blockNumberReducer(state: BlockNumberState, action: BlockNumberChanged): BlockNumberState;
 export {};
 //# sourceMappingURL=reducer.d.ts.map

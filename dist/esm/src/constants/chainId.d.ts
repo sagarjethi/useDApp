@@ -34,6 +34,7 @@ export declare enum ChainId {
     AvalancheTestnet = 43113,
     Songbird = 19,
     Flare = 14,
+    MantleTestnet = 5001,
     FlareCostonTestnet = 16,
     FlareCoston2Testnet = 114,
     MoonbaseAlpha = 1287,

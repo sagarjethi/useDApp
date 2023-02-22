@@ -8,13 +8,13 @@ interface PromiseTransactionOpts {
 /**
  * @internal
  */
-export declare function estimateTransactionGasLimit(transactionRequest: TransactionRequest | undefined, signer: Signer | undefined, gasLimitBufferPercentage: number): Promise<BigNumber | undefined>;
+export declare function estimateTransactionGasLimit(transactionRequest: TransactionRequest | undefined, signer: Signer | undefined, gasLimitBufferPercentage: number): Promise<BigNumber | import("@ethersproject/bignumber").BigNumber>;
 /**
  * @internal
  */
 export declare function estimateContractFunctionGasLimit(contractWithSigner: Contract, functionName: string, args: any[], gasLimitBufferPercentage: number): Promise<BigNumber | undefined>;
 export declare function usePromiseTransaction(chainId: number | undefined, options?: TransactionOptions): {
-    promiseTransaction: (transactionPromise: Promise<TransactionResponse>, { safeTransaction }?: PromiseTransactionOpts, transactionRequest?: TransactionRequest | undefined) => Promise<import("@ethersproject/abstract-provider").TransactionReceipt | undefined>;
+    promiseTransaction: (transactionPromise: Promise<TransactionResponse>, { safeTransaction }?: PromiseTransactionOpts, transactionRequest?: TransactionRequest) => Promise<import("@ethersproject/abstract-provider").TransactionReceipt>;
     state: TransactionStatus;
     resetState: () => void;
 };

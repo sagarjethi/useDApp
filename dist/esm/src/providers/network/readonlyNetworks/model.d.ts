@@ -3,10 +3,10 @@ import type { providers } from 'ethers';
 export interface NetworkState {
     errors: Error[];
 }
-export declare type Providers = {
+export type Providers = {
     [chainId in ChainId]?: providers.BaseProvider;
 };
-export declare type NetworkStates = {
+export type NetworkStates = {
     [chainId in ChainId]?: NetworkState;
 };
 export interface ReadonlyNetworksModel {
@@ -19,5 +19,5 @@ export interface PropagateChainError {
     chainId: ChainId;
     error: Error;
 }
-export declare type Actions = PropagateChainError;
+export type Actions = PropagateChainError;
 //# sourceMappingURL=model.d.ts.map

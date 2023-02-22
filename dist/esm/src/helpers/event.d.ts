@@ -1,4 +1,4 @@
-export declare type Effect = () => (() => void) | undefined | void;
+export type Effect = () => (() => void) | undefined | void;
 export interface ReadOnlyEvent<T> {
     on: (cb: (data: T) => void) => () => void;
     off: (cb: (data: T) => void) => void;

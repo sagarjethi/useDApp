@@ -9,7 +9,6 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { jsx as _jsx } from "react/jsx-runtime";
 import { useEffect, useMemo, useReducer } from 'react';
 import { useDebouncePair, useBlockNumbers } from '../../../hooks';
 import { MultiChainStatesContext } from './context';
@@ -100,6 +99,6 @@ export function MultiChainStateProvider({ children, multicallAddresses }) {
         networks,
     ]);
     const provided = { chains, dispatchCalls };
-    return _jsx(MultiChainStatesContext.Provider, { value: provided, children: children });
+    return <MultiChainStatesContext.Provider value={provided} children={children}/>;
 }
 //# sourceMappingURL=provider.js.map

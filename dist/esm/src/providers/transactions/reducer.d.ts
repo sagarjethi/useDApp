@@ -1,5 +1,5 @@
 import { StoredTransaction, StoredTransactions, UpdatedTransaction } from './model';
-declare type Action = AddTransaction | UpdateTransaction | UpdateTransactions;
+type Action = AddTransaction | UpdateTransaction | UpdateTransactions;
 interface AddTransaction {
     type: 'ADD_TRANSACTION';
     payload: StoredTransaction;

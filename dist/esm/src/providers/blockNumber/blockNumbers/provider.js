@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { useEffect, useReducer } from 'react';
 import { useDebounce } from '../../../hooks';
 import { useReadonlyNetworks } from '../../network';
@@ -21,6 +20,6 @@ export function BlockNumbersProvider({ children }) {
         return () => onUnmount.forEach((fn) => fn());
     }, [networks]);
     const debouncedState = useDebounce(state, 100);
-    return _jsx(BlockNumbersContext.Provider, { value: debouncedState, children: children });
+    return <BlockNumbersContext.Provider value={debouncedState} children={children}/>;
 }
 //# sourceMappingURL=provider.js.map

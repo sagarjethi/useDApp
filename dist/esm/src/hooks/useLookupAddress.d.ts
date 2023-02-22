@@ -19,9 +19,9 @@ interface LookupAddressOptions {
  * )
  */
 export declare function useLookupAddress(address: string | undefined, { rave }?: LookupAddressOptions): {
-    ens: string | null | undefined;
+    ens: string;
     isLoading: boolean;
-    error: Error | null;
+    error: Error;
 };
 export {};
 //# sourceMappingURL=useLookupAddress.d.ts.map

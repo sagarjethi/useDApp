@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { useReducer } from 'react';
 import pickBy from 'lodash.pickby';
 import { DEFAULT_CONFIG } from '../../model/config/default';
@@ -25,6 +24,6 @@ export function ConfigProvider({ config, children }) {
     var _a;
     const configWithDefaults = Object.assign(Object.assign(Object.assign({}, DEFAULT_CONFIG), pickBy(config, noUndefined)), { bufferGasLimitPercentage: undefined, gasLimitBufferPercentage: (_a = config.gasLimitBufferPercentage) !== null && _a !== void 0 ? _a : config.bufferGasLimitPercentage, notifications: Object.assign(Object.assign({}, DEFAULT_CONFIG.notifications), pickBy(config.notifications, noUndefined)) });
     const [reducedConfig, dispatch] = useReducer(configReducer, configWithDefaults);
-    return _jsx(ConfigContext.Provider, { value: { config: reducedConfig, updateConfig: dispatch }, children: children });
+    return <ConfigContext.Provider value={{ config: reducedConfig, updateConfig: dispatch }} children={children}/>;
 }
 //# sourceMappingURL=provider.js.map

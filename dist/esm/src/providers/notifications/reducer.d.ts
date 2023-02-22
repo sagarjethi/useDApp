@@ -9,7 +9,7 @@ interface RemoveNotification {
     chainId: number;
     notificationId: string;
 }
-declare type Action = AddNotification | RemoveNotification;
+type Action = AddNotification | RemoveNotification;
 export declare function notificationReducer(state: Notifications, action: Action): Notifications;
 export {};
 //# sourceMappingURL=reducer.d.ts.map

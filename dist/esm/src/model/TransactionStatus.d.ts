@@ -12,7 +12,7 @@ import type { TransactionResponse, TransactionReceipt } from '@ethersproject/abs
  * - `CollectingSignaturePool` - when user is sending transaction by Multisig wallet (Gnosis Safe) and is waiting for other owners to sign the transaction.
  * @public
  */
-export declare type TransactionState = 'None' | 'PendingSignature' | 'Mining' | 'Success' | 'Fail' | 'Exception' | 'CollectingSignaturePool';
+export type TransactionState = 'None' | 'PendingSignature' | 'Mining' | 'Success' | 'Fail' | 'Exception' | 'CollectingSignaturePool';
 /**
  * Represents a state of a single transaction.
  *

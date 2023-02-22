@@ -8,31 +8,31 @@ interface SetupTestingConfigOptions {
  */
 export declare const setupTestingConfig: ({ multicallVersion }?: SetupTestingConfigOptions) => Promise<{
     config: {
-        readOnlyChainId?: number | undefined;
-        readOnlyUrls?: import("../../constants").NodeUrls | undefined;
-        multicallAddresses?: import("../../constants").MulticallAddresses | undefined;
-        multicallVersion?: 1 | 2 | undefined;
-        fastMulticallEncoding?: boolean | undefined;
-        noMetamaskDeactivate?: boolean | undefined;
-        supportedChains?: number[] | undefined;
-        networks?: import("../../constants").Chain[] | undefined;
-        pollingInterval?: number | undefined;
-        pollingIntervals?: import("../../constants").PollingIntervals | undefined;
+        readOnlyChainId?: number;
+        readOnlyUrls?: import("../../constants").NodeUrls;
+        multicallAddresses?: import("../../constants").MulticallAddresses;
+        multicallVersion?: 1 | 2;
+        fastMulticallEncoding?: boolean;
+        noMetamaskDeactivate?: boolean;
+        supportedChains?: number[];
+        networks?: import("../../constants").Chain[];
+        pollingInterval?: number;
+        pollingIntervals?: import("../../constants").PollingIntervals;
         notifications?: {
-            checkInterval?: number | undefined;
-            expirationPeriod?: number | undefined;
-        } | undefined;
+            checkInterval?: number;
+            expirationPeriod?: number;
+        };
         localStorage?: {
             transactionPath: string;
-        } | undefined;
-        gasLimitBufferPercentage?: number | undefined;
-        bufferGasLimitPercentage?: number | undefined;
-        autoConnect?: boolean | undefined;
-        refresh?: number | "never" | "everyBlock" | undefined;
-        localStorageOverride?: Storage | undefined;
+        };
+        gasLimitBufferPercentage?: number;
+        bufferGasLimitPercentage?: number;
+        autoConnect?: boolean;
+        refresh?: number | "never" | "everyBlock";
+        localStorageOverride?: Storage;
         connectors?: {
             [key: string]: import("../..").Connector;
-        } | undefined;
+        };
     };
     network1: import("./createMockProvider").CreateMockProviderResult;
     network2: import("./createMockProvider").CreateMockProviderResult;

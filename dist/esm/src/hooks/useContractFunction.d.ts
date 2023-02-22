@@ -44,7 +44,7 @@ export declare function connectContractToSigner(contract: Contract, options?: Tr
 export declare function useContractFunction<T extends TypedContract, FN extends ContractFunctionNames<T>>(contract: T | Falsy, functionName: FN, options?: TransactionOptions): {
     send: (...args: Params<T, FN>) => Promise<TransactionReceipt | undefined>;
     state: import("..").TransactionStatus;
-    events: LogDescription[] | undefined;
+    events: LogDescription[];
     resetState: () => void;
 };
 //# sourceMappingURL=useContractFunction.d.ts.map

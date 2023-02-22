@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useEffect, useReducer } from 'react';
 import { useEthers } from '../../hooks';
 import { NotificationsContext } from './context';
@@ -42,6 +41,6 @@ export function NotificationsProvider({ children }) {
             });
         }
     }, [dispatch]);
-    return (_jsx(NotificationsContext.Provider, { value: { addNotification, notifications, removeNotification }, children: children }));
+    return (<NotificationsContext.Provider value={{ addNotification, notifications, removeNotification }} children={children}/>);
 }
 //# sourceMappingURL=provider.js.map

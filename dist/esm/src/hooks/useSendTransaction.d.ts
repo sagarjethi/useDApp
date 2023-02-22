@@ -24,7 +24,7 @@ import { providers } from 'ethers';
  * }
  */
 export declare function useSendTransaction(options?: TransactionOptions): {
-    sendTransaction: (transactionRequest: TransactionRequest) => Promise<providers.TransactionReceipt | undefined>;
+    sendTransaction: (transactionRequest: TransactionRequest) => Promise<providers.TransactionReceipt>;
     state: import("..").TransactionStatus;
     resetState: () => void;
 };

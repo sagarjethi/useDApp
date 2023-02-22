@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import { expect } from 'chai';
 import { AdderProvider, useAdder } from './useAdder';
 import { renderDAppHook } from '../../src/testing';
@@ -27,12 +26,12 @@ describe('useAdder', () => {
     it('properly renders with context wrapper', async () => {
         const { result: firstExample } = await renderDAppHook(useAdder, {
             renderHook: {
-                wrapper: ({ children }) => _jsx(AdderProvider, Object.assign({ value: { prov1: 2, prov2: 2 } }, { children: children })),
+                wrapper: ({ children }) => <AdderProvider value={{ prov1: 2, prov2: 2 }}>{children}</AdderProvider>,
             },
         });
         const { result: secondExample } = await renderDAppHook(() => useAdder(), {
             renderHook: {
-                wrapper: ({ children, prov1, prov2 }) => _jsx(AdderProvider, Object.assign({ value: { prov1, prov2 } }, { children: children })),
+                wrapper: ({ children, prov1, prov2 }) => <AdderProvider value={{ prov1, prov2 }}>{children}</AdderProvider>,
                 initialProps: { prov1: 2, prov2: 2 },
             },
         });
@@ -42,7 +41,7 @@ describe('useAdder', () => {
     it('properly renders with context wrapper changing props', async () => {
         const { result, rerender } = await renderDAppHook(() => useAdder(), {
             renderHook: {
-                wrapper: ({ children, prov1, prov2 }) => _jsx(AdderProvider, Object.assign({ value: { prov1, prov2 } }, { children: children })),
+                wrapper: ({ children, prov1, prov2 }) => <AdderProvider value={{ prov1, prov2 }}>{children}</AdderProvider>,
                 initialProps: { prov1: 2, prov2: 2 },
             },
         });
@@ -53,7 +52,7 @@ describe('useAdder', () => {
     it('properly renders with arguments and context wrapper', async () => {
         const { result } = await renderDAppHook(({ arg1, arg2 }) => useAdder(arg1, arg2), {
             renderHook: {
-                wrapper: ({ children, prov1, prov2 }) => _jsx(AdderProvider, Object.assign({ value: { prov1, prov2 } }, { children: children })),
+                wrapper: ({ children, prov1, prov2 }) => <AdderProvider value={{ prov1, prov2 }}>{children}</AdderProvider>,
                 initialProps: { arg1: 1, arg2: 1, prov1: 2, prov2: 2 },
             },
         });
@@ -63,7 +62,7 @@ describe('useAdder', () => {
     it('properly renders with changing arguments and context wrapper changing props', async () => {
         const { result, rerender } = await renderDAppHook(({ arg1, arg2 }) => useAdder(arg1, arg2), {
             renderHook: {
-                wrapper: ({ children, prov1, prov2 }) => _jsx(AdderProvider, Object.assign({ value: { prov1, prov2 } }, { children: children })),
+                wrapper: ({ children, prov1, prov2 }) => <AdderProvider value={{ prov1, prov2 }}>{children}</AdderProvider>,
                 initialProps: { arg1: 1, arg2: 1, prov1: 2, prov2: 2 },
             },
         });

@@ -9,7 +9,7 @@ export interface State {
 /**
  * @internal Intended for internal use - use it on your own risk
  */
-export declare type ChainStateAction = FetchSuccess | FetchError;
+export type ChainStateAction = FetchSuccess | FetchError;
 interface FetchSuccess {
     type: 'FETCH_SUCCESS';
     chainId: number;
@@ -25,6 +25,6 @@ interface FetchError {
 /**
  * @internal Intended for internal use - use it on your own risk
  */
-export declare function chainStateReducer(state: State | undefined, action: ChainStateAction): State;
+export declare function chainStateReducer(state: State, action: ChainStateAction): State;
 export {};
 //# sourceMappingURL=chainStateReducer.d.ts.map
