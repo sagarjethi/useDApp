@@ -2,7 +2,7 @@
 import { Chain } from '../../constants'
 import { getAddressLink, getTransactionLink } from '../../helpers/chainExplorerLink'
 
-const mantleTestnetEtherscanUrl = 'https://hyperspace.filfox.info'
+const mantleTestnetEtherscanUrl = 'https://explorer.testnet.mantle.xyz/'
 
 
 
