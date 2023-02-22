@@ -7,7 +7,7 @@ const mantleTestnetEtherscanUrl = 'https://explorer.testnet.mantle.xyz/'
 
 
 export const MantleTestnet: Chain = {
-  chainId: 3141,
+  chainId: 5001,
   chainName: 'MantleTestnet',
   isTestChain: true,
   isLocalChain: false,
